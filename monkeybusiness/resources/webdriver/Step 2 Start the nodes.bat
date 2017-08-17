@@ -1,0 +1,2 @@
+java -Dwebdriver.gecko.driver=C:\Projects\MonkeyBusiness\workspace\MonkeyBusiness\resources\webdriver\gecko\geckodriver.exe -jar selenium-server-standalone-3.4.0.jar -role node -hub http://10.60.25.82:4444/grid/register
+REM java -jar selenium-server-standalone-3.4.0.jar -role node -nodeConfig nodeconfig.json

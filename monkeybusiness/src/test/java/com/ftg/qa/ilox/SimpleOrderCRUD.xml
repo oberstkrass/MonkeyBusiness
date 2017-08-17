@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="iLOX - Commerzbank" verbose="10">
+  
+	<parameter name="selenium.browser" value="firefox" />
+	<parameter name="selenium.url" value="https://ilox-uat2.xervices.de/loxwebfelx" />
+	
+	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
+	<parameter name="ilox.password" value="w%kq4W@s2" />
+
+	<test name="CheckLogging" preserve-order="true">
+		<classes>
+ 			<class name="com.ftg.qa.ilox.RedCarpet"/>
+			<class name="com.ftg.qa.ilox.Basics">
+			     <methods>
+			       <include name="browseSite" />
+			       <include name="loginUser" />
+			    </methods>
+			</class>
+			<class name="com.ftg.qa.ilox.Ordering"> 
+			    <methods>
+			      <include name="enterOrder" />
+			    </methods>
+			</class>
+
+						
+		</classes>
+	</test> 
+</suite>
