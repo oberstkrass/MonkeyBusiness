@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="iLOX - Commerzbank" verbose="10">
   
-	<parameter name="selenium.browser" value="firefox" />
+	<parameter name="selenium.browser" value="chrome" />
 	<parameter name="selenium.url" value="https://ilox-uat2.xervices.de/loxwebfelx" />
 	
 	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
 	<parameter name="ilox.password" value="w%kq4W@s2" />
 
-	<test name="CheckOrderCRUD" preserve-order="true">
+	<test name="CheckOrderCRUD_A" preserve-order="true">
 		<classes>
 			<class name="com.ftg.qa.ilox.RedCarpet"/>
 			<class name="com.ftg.qa.ilox.Basics">
@@ -21,12 +21,15 @@
 			      <include name="enterOrder" />
 			    </methods>
 			</class>
-			<class name="com.ftg.qa.ilox.Basics">
+		</classes>
+	</test>
+	<test name="CheckOrderCRUD_B" preserve-order="true">
+		<classes>
+ 			<class name="com.ftg.qa.ilox.Basics">
 			     <methods>
 			       <include name="logoutUser" />
 			    </methods>
 			</class>
 		</classes>
-	</test>
-	
+	</test>	
 </suite>
