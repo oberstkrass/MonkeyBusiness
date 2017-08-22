@@ -1,0 +1,6 @@
+ID-INT,NAME-TEXT,AGE-INT,ADDRESS-CHAR,SALARY-REAL;
+1,Paul,32,California,20000.0;
+2,Allen,25,Texas,15000.0;
+3,Teddy,23,Norway,20000.0;
+4,Mark,25,Rich-Mond,65000.0;
+5,Nicolas,18,Frankfurt,6000.0;
