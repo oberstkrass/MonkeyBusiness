@@ -32,6 +32,8 @@
 			<class name="com.ftg.qa.ilox.Ordering"> 
 			    <methods>
 			      <include name="enterOrder" />
+			      <include name="alterOrder" />
+			      <include name="cancelOrder" />
 			    </methods>
 			</class>
 		</classes>

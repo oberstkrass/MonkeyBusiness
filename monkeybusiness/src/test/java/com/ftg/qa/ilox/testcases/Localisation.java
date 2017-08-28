@@ -1,4 +1,4 @@
-package com.ftg.qa.ilox;
+package com.ftg.qa.ilox.testcases;
 
 public class Localisation {
 

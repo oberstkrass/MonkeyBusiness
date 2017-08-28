@@ -1,4 +1,4 @@
-package com.ftg.qa.ilox;
+package com.ftg.qa.ilox.testcases;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -13,7 +13,7 @@ import com.ftg.qa.ilox.pageobjects.Login;
 import com.ftg.qa.ilox.pageobjects.Order;
 
 @SuppressWarnings("unused")
-public class Basics {
+public class Logging {
 	
 	@Test(description="Browsing site")
 	@Parameters("selenium.url")

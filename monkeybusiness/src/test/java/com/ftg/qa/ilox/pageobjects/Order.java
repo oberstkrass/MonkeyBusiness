@@ -9,7 +9,7 @@ import com.codeborne.selenide.WebDriverRunner;
 /**
  * Page Object encapsulates the Home Page
  */
-public class Order {
+public class Order   {
 
 		public Order() {
             if(!WebDriverRunner.getWebDriver().getTitle().equals("L.O.X. Limit Order Xervices")) {
@@ -23,6 +23,15 @@ public class Order {
         }
 
         
+        
+        
+        
+//        public Order createOrder();
+//    	public Order createOrder(Instrument instrument, BuySell bs, ...);
+//    	 public void updateOrder(Order order);
+//    	public void deleteOrder(Order order);
+    	
+    	
         public long createOrder() {
         	$(By.id("security")).val("DB1D1V");
         	

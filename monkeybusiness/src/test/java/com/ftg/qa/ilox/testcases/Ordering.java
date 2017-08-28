@@ -1,4 +1,4 @@
-package com.ftg.qa.ilox;
+package com.ftg.qa.ilox.testcases;
 
 import static com.codeborne.selenide.Selenide.$;
 
