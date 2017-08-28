@@ -6,7 +6,20 @@
 	
 	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
 	<parameter name="ilox.password" value="w%kq4W@s2" />
-
+	
+	<parameter name="security.isin" value="DB1D1V" />
+	
+	<parameter name="security.ref" value="115.45" />
+	<parameter name="security.ref.ask" value="135.45" />
+	<parameter name="security.ref.bid" value="115.25" />
+	
+	<parameter name="limit.incr" value="*1.05" />
+	<parameter name="limit.decr" value="*0.97" />
+	
+	<parameter name="stoplimit.decr" value="-0.15" />
+	
+	
+        	
 	<test name="CheckOrderCRUD_A" preserve-order="true">
 		<classes>
 			<class name="com.ftg.qa.ilox.RedCarpet"/>
@@ -23,7 +36,7 @@
 			</class>
 		</classes>
 	</test>
-	<test name="CheckOrderCRUD_B" preserve-order="true">
+	<!-- <test name="CheckOrderCRUD_B" preserve-order="true">
 		<classes>
  			<class name="com.ftg.qa.ilox.Basics">
 			     <methods>
@@ -31,5 +44,5 @@
 			    </methods>
 			</class>
 		</classes>
-	</test>	
+	</test>	 -->
 </suite>

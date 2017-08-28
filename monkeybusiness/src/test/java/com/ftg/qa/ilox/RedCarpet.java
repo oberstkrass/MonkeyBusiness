@@ -28,6 +28,6 @@ public class RedCarpet {
 	  
 	@AfterSuite(alwaysRun = true)
 	public void setupAfterSuite() {
-		WebDriverRunner.closeWebDriver();
+//		WebDriverRunner.closeWebDriver();
 	}
 }
