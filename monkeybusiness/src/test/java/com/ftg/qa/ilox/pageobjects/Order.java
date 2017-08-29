@@ -3,6 +3,7 @@ package com.ftg.qa.ilox.pageobjects;
 import static com.codeborne.selenide.Selenide.$;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import com.codeborne.selenide.WebDriverRunner;
 
@@ -21,10 +22,6 @@ public class Order   {
                 // Page encapsulation to manage profile functionality
                 return new Order();
         }
-
-        
-        
-        
         
 //        public Order createOrder();
 //    	public Order createOrder(Instrument instrument, BuySell bs, ...);
@@ -32,9 +29,22 @@ public class Order   {
 //    	public void deleteOrder(Order order);
     	
     	
-        public long createOrder() {
-        	$(By.id("security")).val("DB1D1V");
+        public long createOrder(String marketMaker, String limitType, String type, String tradeRestriction, String isin, int units, double stopLimit, double limit) {
+        	$(By.id("marketmaker")).selectOptionContainingText(marketMaker);
+        	$(By.id("security")).val(isin);
+        	$(By.id("units")).val(Integer.toString(units));
+        	if (limitType == "Stop Limit Order") {
+        		$(By.id("limittype")).selectOptionContainingText(limitType);
+        		$(By.id("stoplimit")).val(Double.toString(stopLimit));
+        	}
+        	$(By.id("limit")).val(Double.toString(limit));
+        	if(limitType == "Limit Order") {
+        		$(By.id("traderes")).val(tradeRestriction);
+        	}
+        	$(By.id("trantype")).selectOptionContainingText(type);;
+        	$(By.id("requestbutton")).click();
         	
+        	$(By.id("searchbutton")).click();
         	
 //        	<form method="post" id="neworderform" action="">
 //        	<input type="hidden" id="token" 
@@ -110,7 +120,35 @@ public class Order   {
 //        							+ "</form>        	
         	return 1;
         }
+        
+        public long changeOrder(String orderNumber, double limitChange, int units) {
+        	
+        	$(By.xpath("//td[@class='ac']/div[1]/img[2]")).click();
+        	$(By.id("limit")).val(Double.toString(limitChange));
+        	$(By.id("units")).val(Integer.toString(units));
+        	
+    		$(By.xpath("//input[@class='stdbutton' and @value='Change']")).click();
+  
+    		if ($(By.id("message")).exists()) {
+    		if($(By.id("message")).getValue() == "invalid order status") {
+    			System.out.println("Order already filled!");
+    			$(By.id("searchbutton")).click();
+    		}
+    		}
+        	
+        	return 1;
+        }
 
+        public long deleteOrder(String orderNumber) {
+        	
+        	if($(By.xpath("//td[@class='ac']/div[1]/img[3]")).exists()){
+        		$(By.xpath("//td[@class='ac']/div[1]/img[3]")).click();
+        
+        		$(By.xpath("//input[@class='stdbutton' and @value='Yes']")).click();
+        	}
+        	
+        	return 1;
+        }
         
         /*More methods offering the services represented by Home Page
         of Logged User. These methods in turn might return more Page Objects

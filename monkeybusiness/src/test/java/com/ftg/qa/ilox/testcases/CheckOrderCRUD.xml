@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="iLOX - Commerzbank" verbose="10">
   
-	<parameter name="selenium.browser" value="chrome" />
+	<parameter name="selenium.browser" value="firefox" />
 	<parameter name="selenium.url" value="https://ilox-uat2.xervices.de/loxwebfelx" />
 	
 	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
 	<parameter name="ilox.password" value="w%kq4W@s2" />
 	
-	<parameter name="security.isin" value="DB1D1V" />
+	<parameter name="security.marketMaker" value = "Commerzbank" />
+	<parameter name="security.isin" value="710000" />
+	<parameter name="security.limitType" value = "Limit Order" />
+	<parameter name="security.type" value = "Buy" />
+	<parameter name="security.tradeRestriction" value = "none" />
+	<parameter name="security.units" value = "2" />
+	<parameter name="security.stopLimit" value = "12" />
+	<parameter name="security.limit" value = "10" />
 	
 	<parameter name="security.ref" value="115.45" />
 	<parameter name="security.ref.ask" value="135.45" />
 	<parameter name="security.ref.bid" value="115.25" />
 	
-	<parameter name="limit.incr" value="*1.05" />
-	<parameter name="limit.decr" value="*0.97" />
+	<parameter name="limit.change" value="20" />
+	<parameter name="security.newUnits" value = "3" />
 	
-	<parameter name="stoplimit.decr" value="-0.15" />
+	<parameter name="stoplimit.change" value="-0.15" />
 	
-	
+	<parameter name="order.number" value = "0" />
         	
 	<test name="CheckOrderCRUD_A" preserve-order="true">
 		<classes>
-			<class name="com.ftg.qa.ilox.RedCarpet"/>
-			<class name="com.ftg.qa.ilox.Basics">
+			<class name="com.ftg.qa.ilox.testcases.RedCarpet"/>
+			<class name="com.ftg.qa.ilox.testcases.Logging">
 			     <methods>
 			       <include name="browseSite" />
 			       <include name="loginUser" />
 			    </methods>
 			</class>
-			<class name="com.ftg.qa.ilox.Ordering"> 
+			<class name="com.ftg.qa.ilox.testcases.Ordering"> 
 			    <methods>
 			      <include name="enterOrder" />
 			      <include name="alterOrder" />
-			      <include name="cancelOrder" />
+			      <include name="cancelOrder" /> 
 			    </methods>
 			</class>
 		</classes>
