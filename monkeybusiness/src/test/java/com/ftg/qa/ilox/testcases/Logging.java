@@ -35,15 +35,22 @@ public class Logging {
             Login loginPage = new Login();
             Order enterOrderPage = loginPage.loginValidUser(user, password);
             $(By.id("loginform")).exists();
+
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//            System.out.println(new Banner().currentLanguage());
+            System.out.println(Banner.currentLanguage());
     }
 	
 	@Test(description="Log off")
     public void logoutUser() {
-            Banner banner = new Banner();
-            Login loginPage = banner.logoff();
+//        new Banner().logoff();
+        Banner.logoff();
             $(By.id("loginform")).exists();
+            
+            
+            
     }
-	
 	
 	//change language
 	

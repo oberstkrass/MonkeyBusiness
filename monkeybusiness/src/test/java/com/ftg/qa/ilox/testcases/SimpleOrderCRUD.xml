@@ -6,23 +6,42 @@
 	
 	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
 	<parameter name="ilox.password" value="w%kq4W@s2" />
+	
+	<parameter name="security.isin" value="DE0007100000" />
+	<parameter name="security.bid" value="115.25" />
+	<parameter name="security.ask" value="117.45" />
 
-	<test name="CheckLogging" preserve-order="true">
+	<test name="Login" preserve-order="true">
 		<classes>
- 			<class name="com.ftg.qa.ilox.RedCarpet"/>
-			<class name="com.ftg.qa.ilox.Basics">
+			<class name="com.ftg.qa.ilox.testcases.RedCarpet"/>
+			<class name="com.ftg.qa.ilox.testcases.Logging">
 			     <methods>
 			       <include name="browseSite" />
 			       <include name="loginUser" />
 			    </methods>
 			</class>
-			<class name="com.ftg.qa.ilox.Ordering"> 
-			    <methods>
-			      <include name="enterOrder" />
+		</classes>
+	</test>
+
+
+	<test name="blah" preserve-order="true">
+	
+		<parameter name="test.ID" value = "LIMIT_BUY_EnterChange_FILLED" />
+		<class name="com.ftg.qa.ilox.testcases.Ordering"> 
+		    <methods>
+		      <include name="processTest" /> 
+		    </methods>
+		</class>
+		
+	</test> 
+
+ 	<test name="Logout" preserve-order="true">
+		<classes>
+ 			<class name="com.ftg.qa.ilox.testcases.Logging">
+			     <methods>
+			       <include name="logoutUser" />
 			    </methods>
 			</class>
-
-						
 		</classes>
-	</test> 
+	</test>
 </suite>

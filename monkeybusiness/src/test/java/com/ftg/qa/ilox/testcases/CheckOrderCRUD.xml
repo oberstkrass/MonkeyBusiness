@@ -7,27 +7,31 @@
 	<parameter name="ilox.user" value="ILOXTEST@ETRADE" />
 	<parameter name="ilox.password" value="w%kq4W@s2" />
 	
-	<parameter name="security.marketMaker" value = "Commerzbank" />
-	<parameter name="security.isin" value="710000" />
-	<parameter name="security.limitType" value = "Limit Order" />
-	<parameter name="security.type" value = "Buy" />
-	<parameter name="security.tradeRestriction" value = "none" />
-	<parameter name="security.units" value = "2" />
-	<parameter name="security.stopLimit" value = "12" />
-	<parameter name="security.limit" value = "10" />
-	
+	<parameter name="security.isin" value="DE0007100000" />
 	<parameter name="security.ref" value="115.45" />
 	<parameter name="security.ref.ask" value="135.45" />
 	<parameter name="security.ref.bid" value="115.25" />
-	
+
+
+
+
+	<parameter name="security.marketMaker" value = "Commerzbank" />
+	<parameter name="security.units" value = "2" />
+	<parameter name="security.stopLimit" value = "12" />
+	<parameter name="security.limit" value = "10" />
+	<parameter name="security.limitType" value = "Limit Order" />
+	<parameter name="security.type" value = "Buy" />
+	<parameter name="security.tradeRestriction" value = "none" />
 	<parameter name="limit.change" value="20" />
 	<parameter name="security.newUnits" value = "3" />
-	
 	<parameter name="stoplimit.change" value="-0.15" />
-	
 	<parameter name="order.number" value = "0" />
         	
 	<test name="CheckOrderCRUD_A" preserve-order="true">
+	
+	
+		<parameter name="testcase" value = "MARKET" />
+	
 		<classes>
 			<class name="com.ftg.qa.ilox.testcases.RedCarpet"/>
 			<class name="com.ftg.qa.ilox.testcases.Logging">
@@ -45,13 +49,13 @@
 			</class>
 		</classes>
 	</test>
-	<!-- <test name="CheckOrderCRUD_B" preserve-order="true">
+	<test name="CheckOrderCRUD_B" preserve-order="true">
 		<classes>
- 			<class name="com.ftg.qa.ilox.Basics">
+ 			<class name="com.ftg.qa.ilox.testcases.Logging">
 			     <methods>
 			       <include name="logoutUser" />
 			    </methods>
 			</class>
 		</classes>
-	</test>	 -->
+	</test>
 </suite>

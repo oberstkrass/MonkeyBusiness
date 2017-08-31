@@ -29,7 +29,16 @@ public class Order   {
 //    	public void deleteOrder(Order order);
     	
     	
-        public long createOrder(String marketMaker, String limitType, String type, String tradeRestriction, String isin, int units, double stopLimit, double limit) {
+        public long createOrder(
+        			String marketMaker
+        			, String limitType
+        			, String type
+        			, String tradeRestriction
+        			, String isin
+        			, int units
+        			, double stopLimit
+        			, double limit) {
+        	
         	$(By.id("marketmaker")).selectOptionContainingText(marketMaker);
         	$(By.id("security")).val(isin);
         	$(By.id("units")).val(Integer.toString(units));
@@ -45,6 +54,7 @@ public class Order   {
         	$(By.id("requestbutton")).click();
         	
         	$(By.id("searchbutton")).click();
+        	
         	
 //        	<form method="post" id="neworderform" action="">
 //        	<input type="hidden" id="token" 
